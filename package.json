@@ -1,4 +1,34 @@
 {
+  "name": "cheque-printing-software",
+  "version": "1.0.0",
+  "description": "A comprehensive web-based cheque printing solution supporting multiple Indian banks with multi-language support, bulk printing via Excel, EMI calculator, and envelope printing capabilities",
+  "main": "index.php",
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codersandip/cheque-printing-software.git"
+  },
+  "keywords": [
+    "cheque-printing",
+    "banking-software",
+    "php",
+    "javascript",
+    "bootstrap",
+    "indian-banks",
+    "emi-calculator",
+    "multi-language",
+    "webpack",
+    "printing-solution",
+    "financial-tools"
+  ],
+  "author": "Sandip Tawhare",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codersandip/cheque-printing-software/issues"
+  },
+  "homepage": "https://github.com/codersandip/cheque-printing-software#readme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
     "bootstrap": "^5.3.3",
@@ -14,15 +44,5 @@
   "devDependencies": {
     "webpack": "^5.97.1",
     "webpack-cli": "^6.0.1"
-  },
-  "scripts": {
-    "build": "webpack"
-  },
-  "name": "cw",
-  "version": "1.0.0",
-  "main": "webpack.config.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  }
 }
