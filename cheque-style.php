@@ -10,100 +10,99 @@
 
 <body>
     <?php include_once('./layout/navbar.php'); ?>
-    <div class="container mt-3 mb-5">
-        <div>
-            <div class="text-center mb-3 cheque-title">
-                <h1>Cheque Styling</h1>
-            </div>
-            <form id="saveChequePrefix">
-                <div class="row">
-                    <div class="col-md-8 offset-md-2">
-                        <fieldset class="rounded p-4 shadow mb-4">
-                            <legend class="float-none w-auto px-2 text-primary">Payee</legend>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group mb-3">
-                                        <label for="payeePrefix">Prefix: </label>
-                                        <input type="text" class="form-control form-control-sm" id="payeePrefix"
-                                            placeholder="Prefix">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group mb-3">
-                                        <label for="payeeSufix">Suffix: </label>
-                                        <input type="text" class="form-control form-control-sm" id="payeeSufix"
-                                            placeholder="Suffix">
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
+    <main class="container page-shell">
+        <section class="page-hero cheque-title">
+            <div class="page-hero__content">
+                <div>
+                    <p class="page-hero__eyebrow">Cheque Styling</p>
+                    <h1>Control the text framing that gets printed on every cheque.</h1>
+                    <p>Configure prefixes, suffixes, and default alignment from one settings page instead of editing values inside each print session.</p>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <strong>Stored in</strong>
+                        <span>Browser local storage</span>
                     </div>
-                    <div class="col-md-8 offset-md-2">
-                        <fieldset class="rounded p-4 shadow mb-4">
-                            <legend class="float-none w-auto px-2 text-primary">Amount</legend>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group mb-3">
-                                        <label for="amountPrefix">Prefix: </label>
-                                        <input type="text" class="form-control form-control-sm" id="amountPrefix"
-                                            placeholder="Prefix">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group mb-3">
-                                        <label for="amountSufix">Suffix: </label>
-                                        <input type="text" class="form-control form-control-sm" id="amountSufix"
-                                            placeholder="Suffix">
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </div>
-                    <div class="col-md-8 offset-md-2">
-                        <fieldset class="rounded p-4 shadow mb-4">
-                            <legend class="float-none w-auto px-2 text-primary">Amount in Words</legend>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group mb-3">
-                                        <label for="amountWordsPrefix">Prefix: </label>
-                                        <input type="text" class="form-control form-control-sm" id="amountWordsPrefix"
-                                            placeholder="Prefix">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group mb-3">
-                                        <label for="amountWordsSufix">Suffix: </label>
-                                        <input type="text" class="form-control form-control-sm" id="amountWordsSufix"
-                                            placeholder="Suffix">
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </div>
-                    <div class="col-md-8 offset-md-2">
-                        <fieldset class="rounded p-4 shadow mb-4">
-                            <legend class="float-none w-auto px-2 text-primary">Cheque Align</legend>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group mb-3">
-                                        <label for="amountWordsPrefix">Align: </label>
-                                        <select id="chequeAlign" class="form-select">
-                                            <option value="top: 50%;right: 0;transform: translateY(-50%);">Center</option>
-                                            <option value="top: 0%;right: 0;transform: translateY(-0%);">Left</option>
-                                            <option value="top: 100%;right: 0;transform: translateY(-100%);">Right</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </div>
-                    <div class="col-md-8 offset-md-2 text-center">
-                        <Button class="btn btn-primary w-25 shadow">Save</Button>
+                    <div class="hero-stat">
+                        <strong>Applies to</strong>
+                        <span>Payee, amount, and amount words</span>
                     </div>
                 </div>
-            </form>
-        </div>
-    </div>
+            </div>
+        </section>
+
+        <section class="workspace-grid workspace-grid--single">
+            <div class="surface-card control-panel">
+                <div class="surface-card__header">
+                    <div>
+                        <span class="section-badge">Settings</span>
+                        <h2>Cheque text presets</h2>
+                        <p>These values are reused by the cheque print flow so the wording stays consistent.</p>
+                    </div>
+                </div>
+                <div class="surface-card__body">
+                    <form id="saveChequePrefix" class="control-stack">
+                        <div class="settings-grid">
+                            <fieldset class="field-card">
+                                <legend class="float-none w-auto px-0">Payee</legend>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="payeePrefix" class="form-label">Prefix</label>
+                                        <input type="text" class="form-control" id="payeePrefix" placeholder="Prefix">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="payeeSufix" class="form-label">Suffix</label>
+                                        <input type="text" class="form-control" id="payeeSufix" placeholder="Suffix">
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="field-card">
+                                <legend class="float-none w-auto px-0">Amount</legend>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="amountPrefix" class="form-label">Prefix</label>
+                                        <input type="text" class="form-control" id="amountPrefix" placeholder="Prefix">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="amountSufix" class="form-label">Suffix</label>
+                                        <input type="text" class="form-control" id="amountSufix" placeholder="Suffix">
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="field-card">
+                                <legend class="float-none w-auto px-0">Amount in words</legend>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="amountWordsPrefix" class="form-label">Prefix</label>
+                                        <input type="text" class="form-control" id="amountWordsPrefix" placeholder="Prefix">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="amountWordsSufix" class="form-label">Suffix</label>
+                                        <input type="text" class="form-control" id="amountWordsSufix" placeholder="Suffix">
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="field-card">
+                                <legend class="float-none w-auto px-0">Cheque alignment</legend>
+                                <label for="chequeAlign" class="form-label">Default align</label>
+                                <select id="chequeAlign" class="form-select">
+                                    <option value="top: 50%;right: 0;transform: translateY(-50%);">Center</option>
+                                    <option value="top: 0%;right: 0;transform: translateY(-0%);">Left</option>
+                                    <option value="top: 100%;right: 0;transform: translateY(-100%);">Right</option>
+                                </select>
+                            </fieldset>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-primary px-5 w-fit">Save Style Settings</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
     <?php include_once('./layout/js.php'); ?>
     <script>
         $(document).ready(function() {

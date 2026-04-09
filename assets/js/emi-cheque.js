@@ -88,17 +88,17 @@ const calculateEmi = () => {
     const olderDate = new Date(moment($("#emiFormDate")));
     const currentDate = new Date(moment($("#emiFormDate")).add(period, 'M'));
     
-    html = `<div class="col-md-3">
-        <b>Total Intrest: </b> ${parseFloat(totalInterest.toFixed(2)).toLocaleString('en-IN')}
-        <br>
-        <!--${getToWordsInstance('en-IN').convert(totalInterest.toFixed(2))}-->
+    html = `<div class="metric-card">
+        <strong>Total Interest</strong>
+        <span>${parseFloat(totalInterest.toFixed(2)).toLocaleString('en-IN')}</span>
     </div>
-    <div class="col-md-3">
-        <b>Total Payable Amount: </b> ${parseFloat(totalPayableAmount.toFixed(2)).toLocaleString('en-IN')}<br>
-        <!--${getToWordsInstance('en-IN').convert(totalPayableAmount.toFixed(2))}-->
+    <div class="metric-card">
+        <strong>Total Payable Amount</strong>
+        <span>${parseFloat(totalPayableAmount.toFixed(2)).toLocaleString('en-IN')}</span>
     </div>
-    <div class="col-md-3">
-        <b>Total Peroid:</b>${dateDiffInMonths(olderDate, currentDate, true)}
+    <div class="metric-card">
+        <strong>Total Period</strong>
+        <span>${dateDiffInMonths(olderDate, currentDate, true)}</span>
     </div>`;
 
 

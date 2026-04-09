@@ -10,57 +10,89 @@
 
 <body>
     <?php include_once('./layout/navbar.php'); ?>
-    <div class="container mt-3">
-        <div class="text-center mb-3 cheque-title">
-            <h1>Cheque Printing Software</h1>
-            <!-- <p>Software to print cheque</p> -->
-        </div>
+    <main class="container page-shell">
+        <section class="page-hero cheque-title">
+            <div class="page-hero__content">
+                <div>
+                    <p class="page-hero__eyebrow">Cheque Back</p>
+                    <h1>Compose back-side cheque notes with a cleaner print workspace.</h1>
+                    <p>Write the content in markdown, tune the sheet dimensions, and review the final back print without leaving the page.</p>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <strong>Formatting</strong>
+                        <span>Markdown to print preview</span>
+                    </div>
+                    <div class="hero-stat">
+                        <strong>Layout</strong>
+                        <span>Custom width, height, and page count</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <div>
-            <form>
-                <div class="row mt-3">
-                    <div class="col-md-6 offset-md-3">
-                        <div class="form-group mb-3">
-                            <label for="" class="form-label">Cheque Back Data <small class="text-muted">(Markdown
-                                    format)</small></label>
-                            <textarea id="chequeFormBackData" class="form-control mb-3" rows="5"></textarea>
-                        </div>
+        <section class="workspace-grid">
+            <div class="surface-card control-panel">
+                <div class="surface-card__header">
+                    <div>
+                        <span class="section-badge">Editor</span>
+                        <h2>Back print content</h2>
+                        <p>Use markdown for names, headings, and supporting details that need to print on the reverse side.</p>
                     </div>
-                    <div class="col-md-6 offset-md-3">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group mb-3">
-                                    <label for="" class="form-label">No of Pages</label>
-                                    <input type="text" class="form-control mb-3" id="noOfPages">
+                </div>
+                <div class="surface-card__body">
+                    <form class="control-stack">
+                        <div class="control-group">
+                            <h3>Content</h3>
+                            <label for="chequeFormBackData" class="form-label">Cheque back data</label>
+                            <textarea id="chequeFormBackData" class="form-control" rows="6"></textarea>
+                        </div>
+                        <div class="control-group">
+                            <h3>Paper setup</h3>
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <label for="noOfPages" class="form-label">Pages</label>
+                                    <input type="text" class="form-control" id="noOfPages">
                                 </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group mb-3">
-                                    <label for="" class="form-label">Width <small class="text-muted">(mm)</small></label>
-                                    <input type="text" class="form-control mb-3" id="width" value="204">
+                                <div class="col-md-4">
+                                    <label for="width" class="form-label">Width (mm)</label>
+                                    <input type="text" class="form-control" id="width" value="204">
                                 </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group mb-3">
-                                    <label for="" class="form-label">Height <small class="text-muted">(mm)</small></label>
-                                    <input type="text" class="form-control mb-3" id="height" value="93">
+                                <div class="col-md-4">
+                                    <label for="height" class="form-label">Height (mm)</label>
+                                    <input type="text" class="form-control" id="height" value="93">
                                 </div>
                             </div>
                         </div>
+                        <button class="btn btn-primary w-100 back-print-btn">Print</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="surface-card">
+                <div class="surface-card__header">
+                    <div>
+                        <span class="section-badge">Preview</span>
+                        <h2>Back side render</h2>
+                        <p>Generated pages update as you type so spacing issues are visible before printing.</p>
                     </div>
-                    <div class="col-md-6 offset-md-3">
-                        <div class="form-group mb-3">
-                            <div class="form-group mb-3 text-center">
-                                <button class="btn btn-primary w-25 back-print-btn">Print</button>
+                </div>
+                <div class="surface-card__body">
+                    <div class="preview-shell">
+                        <div class="preview-toolbar">
+                            <p>Markdown is converted into the printable layout in real time.</p>
+                            <span class="section-badge">Live pages</span>
+                        </div>
+                        <div class="preview-canvas">
+                            <div class="preview-frame">
+                                <div class="print-container"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </form>
-        </div>
-        <div class="print-container">
-        </div>
-    </div>
+            </div>
+        </section>
+    </main>
     <?php include_once('./layout/js.php'); ?>
     <script src="https://unpkg.com/showdown@2.1.0/dist/showdown.min.js"></script>
     <script>

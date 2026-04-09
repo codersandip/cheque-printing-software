@@ -10,70 +10,101 @@
 
 <body>
     <?php include_once('./layout/navbar.php'); ?>
-    <div class="container mt-3">
-        <div class="text-center mb-3 cheque-title">
-            <h1>Envelope Printing</h1>
-            <!-- <p>Software to print cheque</p> -->
-        </div>
+    <main class="container page-shell">
+        <section class="page-hero cheque-title">
+            <div class="page-hero__content">
+                <div>
+                    <p class="page-hero__eyebrow">Envelope Printing</p>
+                    <h1>Lay out sender and delivery addresses in a more polished print canvas.</h1>
+                    <p>Create envelope sheets with a centered title, editable dimensions, and live address placement as you type.</p>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <strong>Input</strong>
+                        <span>Markdown sender and delivery blocks</span>
+                    </div>
+                    <div class="hero-stat">
+                        <strong>Output</strong>
+                        <span>Printable envelope sheets</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <div>
-            <form>
-                <div class="row mt-3">
-                    <div class="col-md-6">
-                        <div class="form-group mb-3">
-                            <label for="envelopeTitle" class="form-label">Title</label>
-                            <input type="text" class="form-control mb-3" id="envelopeTitle">
-                        </div>
+        <section class="workspace-grid">
+            <div class="surface-card control-panel">
+                <div class="surface-card__header">
+                    <div>
+                        <span class="section-badge">Envelope Setup</span>
+                        <h2>Compose the sheet</h2>
+                        <p>Define the title, page size, and address blocks from a single form.</p>
                     </div>
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group mb-3">
-                                    <label for="noOfPages" class="form-label">No of Pages</label>
-                                    <input type="number" class="form-control mb-3" id="noOfPages" value="1">
+                </div>
+                <div class="surface-card__body">
+                    <form class="control-stack">
+                        <div class="control-group">
+                            <h3>Document</h3>
+                            <div class="row g-3">
+                                <div class="col-md-12">
+                                    <label for="envelopeTitle" class="form-label">Title</label>
+                                    <input type="text" class="form-control" id="envelopeTitle">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="noOfPages" class="form-label">Pages</label>
+                                    <input type="number" class="form-control" id="noOfPages" value="1">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="width" class="form-label">Width (mm)</label>
+                                    <input type="number" class="form-control" id="width" value="219">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="height" class="form-label">Height (mm)</label>
+                                    <input type="number" class="form-control" id="height" value="93">
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="form-group mb-3">
-                                    <label for="width" class="form-label">Width <small class="text-muted">(mm)</small></label>
-                                    <input type="number" class="form-control mb-3" id="width" value="219">
+                        </div>
+                        <div class="control-group">
+                            <h3>Addresses</h3>
+                            <div class="row g-3">
+                                <div class="col-md-12">
+                                    <label for="envelopeSenderAddress" class="form-label">Sender address</label>
+                                    <textarea id="envelopeSenderAddress" class="form-control" rows="5"></textarea>
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="envelopeDeliveryAddress" class="form-label">Delivery address</label>
+                                    <textarea id="envelopeDeliveryAddress" class="form-control" rows="5"></textarea>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="form-group mb-3">
-                                    <label for="height" class="form-label">Height <small class="text-muted">(mm)</small></label>
-                                    <input type="number" class="form-control mb-3" id="height" value="93">
-                                </div>
-                            </div>
                         </div>
+                        <button class="btn btn-primary w-100 back-print-btn">Print</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="surface-card">
+                <div class="surface-card__header">
+                    <div>
+                        <span class="section-badge">Preview</span>
+                        <h2>Envelope sheet preview</h2>
+                        <p>Review title alignment and address placement before sending the sheet to print.</p>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group mb-3">
-                            <label for="envelopeSenderAddress" class="form-label">Sender Address <small class="text-muted">(Markdown
-                                    format)</small></label>
-                            <textarea id="envelopeSenderAddress" class="form-control mb-3" rows="5"></textarea>
+                </div>
+                <div class="surface-card__body">
+                    <div class="preview-shell">
+                        <div class="preview-toolbar">
+                            <p>The preview refreshes on each input change.</p>
+                            <span class="section-badge">Address layout</span>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group mb-3">
-                            <label for="envelopeDeliveryAddress" class="form-label">Delivery Address <small class="text-muted">(Markdown
-                                    format)</small></label>
-                            <textarea id="envelopeDeliveryAddress" class="form-control mb-3" rows="5"></textarea>
-                        </div>
-                    </div>
-                    <div class="col-md-6 offset-md-3">
-                        <div class="form-group mb-3">
-                            <div class="form-group mb-3 text-center">
-                                <button class="btn btn-primary w-25 back-print-btn">Print</button>
+                        <div class="preview-canvas">
+                            <div class="preview-frame">
+                                <div class="print-container"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </form>
-        </div>
-        <div class="print-container">
-        </div>
-    </div>
+            </div>
+        </section>
+    </main>
     <?php include_once('./layout/js.php'); ?>
     <script src="https://unpkg.com/showdown@2.1.0/dist/showdown.min.js"></script>
     <script>
