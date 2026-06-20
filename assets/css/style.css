@@ -331,6 +331,10 @@ a {
     margin: 0;
 }
 
+.switch-card .form-switch {
+    padding-left: 0;
+}
+
 .switch-card .form-check-label {
     margin: 0;
     font-weight: 600;

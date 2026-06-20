@@ -10,7 +10,7 @@
 
 <body>
     <?php include_once('./layout/navbar.php'); ?>
-    <main class="container page-shell">
+    <main class="container-fluid page-shell">
         <section class="page-hero cheque-title">
             <div class="page-hero__content">
                 <div>

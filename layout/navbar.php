@@ -10,7 +10,7 @@ $navItems = [
 ];
 ?>
 <nav class="navbar navbar-expand-xl app-navbar sticky-top">
-  <div class="container app-navbar__container">
+  <div class="container-fluid px-4 px-xl-5 app-navbar__container">
     <a class="navbar-brand app-brand" href="./">
       <span class="app-brand__mark">CP</span>
       <span>
