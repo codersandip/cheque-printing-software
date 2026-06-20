@@ -126,11 +126,15 @@
                                     <datalist id="names">
                                         <option value="Payee Name">
                                         <option value="Sandip Baliram Tawhare">
-                                        <option value="à¤¸à¤‚à¤¦à¤¿à¤ª à¤¬à¤³à¥€à¤°à¤¾à¤® à¤Ÿà¤¾à¤µà¥à¤¹à¤°à¥‡">
+                                        <option value="संदिप बळीराम टाव्हरे">
+                                        <option value="सचिन मच्छिंद्र टाव्हरे">
+                                        <option value="Sachin Machhindra Tavhare">
                                         <option value="Kunda Baliram Tawhare">
-                                        <option value="à¤•à¥à¤‚à¤¦à¤¾ à¤¬à¤³à¥€à¤°à¤¾à¤® à¤Ÿà¤¾à¤µà¥à¤¹à¤°à¥‡">
+                                        <option value="कुंदा बळीराम टाव्हरे">
                                         <option value="Axis Bank Card No. (6529-2210-1374-6798)">
-                                        <option value="à¤…à¤¶à¥‹à¤• à¤•à¤¿à¤¸à¤¨ à¤œà¤¾à¤§à¤µ">
+                                        <option value="Axis Bank Card No. (6530-4700-0637-8955)">
+                                        <option value="HDFC Bank Card A/c (6530-4900-0322-3400)">
+                                        <option value="HDFC Bank Card A/c (6529-2500-1103-3768)">
                                     </datalist>
                                 </div>
                                 <div class="col-md-12 single-cheque">
